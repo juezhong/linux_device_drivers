@@ -43,6 +43,9 @@ enum LED_STATUS {
 
 static int led_char_open (struct inode *inode, struct file *filp) {
     printk(KERN_INFO "LED Character Device is opened\n");
+    // 保存这个 led_char 结构体指针，以便其他函数使用
+    // 如果不这么做，其他函数无法访问这个结构体，或者多个设备文件同时打开时，无法区分是哪个设备文件
+    filp->private_data = led_char;
     return 0;
 }
 
