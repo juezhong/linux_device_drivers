@@ -1,0 +1,11 @@
+CompileFlags:
+  Add:
+    - -nostdinc
+    - -D__KERNEL__
+  Remove:
+    - -fno-allow-store-data-races
+    - -fconserve-stack
+    - -femit-struct-debug-baseonly
+    - -mno-fdpic
+    - -fno-ipa-sra
+  Compiler: arm-linux-gnueabihf-gcc
