@@ -103,10 +103,14 @@ static int execute_command_with_one_args(int argc, char* argv[])
         case APP_OPERATION_DELAY:
             // printf("===> [APP DEBUG] Command: %s <===\n", argv[2]);
             break;
+        case APP_OPERATION_BLOCK_READ:
+            command_block_read(argc, argv, dev_fd);
+            break;
         default:
             printf("===> [APP DEBUG] Unknow command: %s <===\n", argv[2]);
     }
 
+    close_device(dev_fd);
     return 0;
 }
 
