@@ -106,6 +106,9 @@ static int execute_command_with_one_args(int argc, char* argv[])
         case APP_OPERATION_BLOCK_READ:
             command_block_read(argc, argv, dev_fd);
             break;
+        case APP_OPERATION_IOCTL:
+            command_ioctl(argc, argv, dev_fd);
+            break;
         default:
             printf("===> [APP DEBUG] Unknow command: %s <===\n", argv[2]);
     }

@@ -5,7 +5,8 @@ enum {
     APP_OPERATION_NONE = 0,
     APP_OPERATION_BLINK,
     APP_OPERATION_DELAY,
-    APP_OPERATION_BLOCK_READ, // 阻塞读
+    APP_OPERATION_BLOCK_READ,   // 阻塞读
+    APP_OPERATION_IOCTL,        // ioctl cmds
 };
 
 char *app_operation_strs[] = {
@@ -13,10 +14,12 @@ char *app_operation_strs[] = {
     "blink", // 闪烁
     "delay", // 延时
     "block_read", // 阻塞读
+    "ioctl", // ioctl cmds
 };
 
 void command_blink(int argc, char *argv[], int dev_fd);
 void command_delay(int argc, char *argv[], int dev_fd);
 void command_block_read(int argc, char *argv[], int dev_fd);
+void command_ioctl(int argc, char *argv[], int dev_fd);
 
 #endif /* __COMMANDS_H__ */
