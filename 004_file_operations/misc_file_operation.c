@@ -34,7 +34,7 @@ static ssize_t hello_misc_write (struct file *filp, const char __user *ubuff, si
         return ret;
     }
     printk("Write from user data: %s\n", kbuf);
-    return 0;
+    return ret;
 }
 
 /**
@@ -83,3 +83,6 @@ static void misc_exit (void) {
 module_init(misc_init);
 module_exit(misc_exit);
 MODULE_LICENSE("GPL");
+MODULE_AUTHOR("liyunfeng");
+MODULE_DESCRIPTION("misc device example");
+MODULE_VERSION("0.1");
