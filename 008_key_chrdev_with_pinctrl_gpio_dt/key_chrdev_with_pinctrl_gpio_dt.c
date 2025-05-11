@@ -25,7 +25,7 @@ struct key_char {
     struct class *cls;          // 类
     struct device *dev;         // 设备
     struct device_node *np;     // 设备树节点
-    int key_gpio;               // LED对应的GPIO
+    int key_gpio;               // KEY对应的GPIO
     atomic_t key_value;         // 按键值
 };
 static struct key_char *key_char = NULL;
@@ -33,8 +33,7 @@ static struct key_char *key_char = NULL;
 /**
  * @brief open 的时候初始化按键IO
  */
-static int key_io_init(void)
-{
+static int key_io_init(void) {
     int ret = 0;
     if (key_char == NULL) {
         printk(KERN_ERR "key_char is NULL\n");
@@ -124,7 +123,7 @@ static ssize_t key_char_write (struct file *filp, const char *buff, size_t len, 
     }
     printk("Write from user data: %s\n", kbuf);
 
-    return 0;
+    return ret;
 }
 
 static struct file_operations key_char_fops = {
@@ -144,7 +143,7 @@ static int key_char_cdev_init (struct key_char *key_char) {
         return -1;
     }
     // allocate major and minor
-    ret = alloc_chrdev_region(&key_char->dev_t, 0, 1, "led_chrdev");
+    ret = alloc_chrdev_region(&key_char->dev_t, 0, 1, "key_chrdev");
     if (ret < 0) {
         printk(KERN_ERR "Failed to allocate major and minor\n");
         return ret;
@@ -174,7 +173,7 @@ static int key_char_cdev_init (struct key_char *key_char) {
     }
 
     key_char->dev = device_create(key_char->cls, NULL, key_char->dev_t, NULL, "key_chrdev");
-    // key_char->dev = device_create(key_char->cls, NULL, key_char->dev_t, NULL, "led_chrdev_%d", key_char->minor);
+    // key_char->dev = device_create(key_char->cls, NULL, key_char->dev_t, NULL, "key_chrdev_%d", key_char->minor);
     if (IS_ERR(key_char->dev)) {
         printk(KERN_ERR "Failed to create device\n");
         class_destroy(key_char->cls);

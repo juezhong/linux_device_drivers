@@ -117,7 +117,7 @@ static ssize_t led_char_write (struct file *filp, const char *buff, size_t len, 
     } else {
         led_ctrl_switch(LED_SWITCH);
     }
-    return 0;
+    return ret;
 }
 
 static struct file_operations led_char_fops = {

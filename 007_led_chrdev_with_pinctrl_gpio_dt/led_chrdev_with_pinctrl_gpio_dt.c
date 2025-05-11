@@ -79,7 +79,7 @@ static ssize_t led_char_write (struct file *filp, const char *buff, size_t len, 
         // led_ctrl_switch(LED_SWITCH);
         gpio_set_value(led_char->led_gpio, !gpio_get_value(led_char->led_gpio));
     }
-    return 0;
+    return ret;
 }
 
 static struct file_operations led_char_fops = {
