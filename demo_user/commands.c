@@ -35,6 +35,7 @@ void command_block_read(int argc, char *argv[], int dev_fd) {
         if (value == VALID_KEY_VALUE) {
             printf("Valid key value: %x\n", value);
             printf("Press key.. \n");
+            value = INVALID_KEY_VALUE;
         }
     }
 }
