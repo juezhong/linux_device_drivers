@@ -15,8 +15,7 @@ char *device_strs[] = {
     "gpio", // GPIO 设备
 };
 
-void command_blink(int argc, char *argv[], int dev_fd)
-{
+void command_blink(int argc, char *argv[], int dev_fd) {
     char *cmd = "switch";
     for (int i = 0; i < atoi(argv[3]); i++) {
         write(dev_fd, cmd, strlen(cmd));
@@ -24,7 +23,9 @@ void command_blink(int argc, char *argv[], int dev_fd)
         usleep(300000);
     }
 }
-void command_delay(int argc, char *argv[], int dev_fd);
+void command_delay(int argc, char *argv[], int dev_fd) {
+    ;
+}
 void command_block_read(int argc, char *argv[], int dev_fd) {
     // already opened
     #define VALID_KEY_VALUE     0xF0

@@ -70,14 +70,12 @@ static int execute_command_no_args(int argc, char* argv[])
 // 找出命令的下标
 int find_command_index(char* command)
 {
-    int index = 0;
-    for (int i = 0; i < sizeof(app_operation_strs) / sizeof(app_operation_strs[0]); i++) {
-        if (strcmp(app_operation_strs[i], command) == 0) {
-            index = i;
-            break;
+    for (int i = 0; i < sizeof(operation_ids) / sizeof(operation_ids[0]); i++) {
+        if (strcmp(operation_ids[i].operation_str, command) == 0) {
+            return i;
         }
     }
-    return index;
+    return 0;
 }
 
 static int execute_command_with_one_args(int argc, char* argv[])
@@ -95,23 +93,8 @@ static int execute_command_with_one_args(int argc, char* argv[])
 
     // 根据不同的命令做不同的处理
     // 通过字符串数组，直接取出来下标
-    switch (find_command_index(argv[2])) {
-        case APP_OPERATION_BLINK:
-            // printf("===> [APP DEBUG] Command: %s <===\n", argv[2]);
-            command_blink(argc, argv, dev_fd);
-            break;
-        case APP_OPERATION_DELAY:
-            // printf("===> [APP DEBUG] Command: %s <===\n", argv[2]);
-            break;
-        case APP_OPERATION_BLOCK_READ:
-            command_block_read(argc, argv, dev_fd);
-            break;
-        case APP_OPERATION_IOCTL:
-            command_ioctl(argc, argv, dev_fd);
-            break;
-        default:
-            printf("===> [APP DEBUG] Unknow command: %s <===\n", argv[2]);
-    }
+    int command_enum = find_command_index(argv[2]);
+    operations[command_enum].func(argc, argv, dev_fd);
 
     close_device(dev_fd);
     return 0;
