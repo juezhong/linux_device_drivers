@@ -1,0 +1,41 @@
+/*
+ * Copyright 2019 NXP
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ */
+
+#include "imx6ull-14x14-evk.dts"
+
+&usdhc2 {
+	pinctrl-names = "default", "state_100mhz", "state_200mhz";
+	pinctrl-0 = <&pinctrl_usdhc2_8bit>;
+	pinctrl-1 = <&pinctrl_usdhc2_8bit_100mhz>;
+	pinctrl-2 = <&pinctrl_usdhc2_8bit_200mhz>;
+	bus-width = <8>;
+	non-removable;
+	status = "okay";
+};
+
+&iomuxc {
+    beep_pinctrl: beepgrp {
+        fsl,pins = <
+			MX6UL_PAD_SNVS_TAMPER1__GPIO5_IO01 0x10B0 /* GPIO5_IO1 BEEP */
+        >;
+    };
+};
+
+// 创建 GPIO 节点
+/ {
+	opendev_gpio_beep {
+		#address-cells = <1>;
+		#size-cells = <1>;
+		compatible = "opendev-gpio-beep";
+		pinctrl-names = "default";
+		pinctrl-0 = <&beep_pinctrl>;
+		beep-gpios = <&gpio5 1 GPIO_ACTIVE_HIGH>; /* BEEP */
+		status = "okay";
+	};
+};
