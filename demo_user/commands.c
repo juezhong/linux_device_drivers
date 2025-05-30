@@ -8,11 +8,13 @@
 enum {
     DEVICE_TYPE_LED = 0, // LED 设备
     DEVICE_TYPE_GPIO,    // GPIO 设备
+    DEVICE_TYPE_OLED,    // OLED 设备
 };
 
 char *device_strs[] = {
     "led",  // LED 设备
     "gpio", // GPIO 设备
+    "oled", // OLED 设备
 };
 
 void command_blink(int argc, char *argv[], int dev_fd) {
@@ -68,6 +70,10 @@ void command_ioctl(int argc, char *argv[], int dev_fd) {
         case DEVICE_TYPE_GPIO:
             // printf("GPIO ioctl commands\n");
             gpio_ioctl(argc, argv, dev_fd);
+            break;
+        case DEVICE_TYPE_OLED:
+            // printf("OLED ioctl commands\n");
+            oled_ioctl(argc, argv, dev_fd);
             break;
         default:
             printf("Invalid device type\n");
