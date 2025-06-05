@@ -83,6 +83,6 @@ static void misc_exit (void) {
 module_init(misc_init);
 module_exit(misc_exit);
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("liyunfeng");
+MODULE_AUTHOR("liyunfeng <1193230388@qq.com>");
 MODULE_DESCRIPTION("misc device example");
 MODULE_VERSION("0.1");

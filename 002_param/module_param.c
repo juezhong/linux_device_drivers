@@ -50,6 +50,6 @@ static void m_exit (void) {
 module_init(m_init);
 module_exit(m_exit);
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("liyunfeng");
+MODULE_AUTHOR("liyunfeng <1193230388@qq.com>");
 MODULE_DESCRIPTION("This is a module param example.");
 MODULE_VERSION("0.1");

@@ -329,6 +329,6 @@ module_init(iic_oled_platform_init);
 module_exit(iic_oled_platform_exit);
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("liyunfeng");
+MODULE_AUTHOR("liyunfeng <1193230388@qq.com>");
 MODULE_DESCRIPTION("I2C OLED Platform Device(Driver)");
 MODULE_VERSION("0.1");

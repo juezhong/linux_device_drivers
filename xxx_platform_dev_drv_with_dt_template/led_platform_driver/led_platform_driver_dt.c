@@ -270,6 +270,6 @@ module_init(led_char_platform_init);
 module_exit(led_char_platform_exit);
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("liyunfeng");
+MODULE_AUTHOR("liyunfeng <1193230388@qq.com>");
 MODULE_DESCRIPTION("LED Character Platform Device Driver");
 MODULE_VERSION("0.1");

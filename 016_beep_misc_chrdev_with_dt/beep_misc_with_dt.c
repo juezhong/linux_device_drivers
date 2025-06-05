@@ -137,6 +137,6 @@ static void beep_misc_dev_exit (void) {
 module_init(beep_misc_dev_init);
 module_exit(beep_misc_dev_exit);
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("liyunfeng");
+MODULE_AUTHOR("liyunfeng <1193230388@qq.com>");
 MODULE_DESCRIPTION("Beep misc Character Device");
 MODULE_VERSION("0.1");

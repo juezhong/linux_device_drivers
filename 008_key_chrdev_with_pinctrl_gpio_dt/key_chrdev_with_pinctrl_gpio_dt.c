@@ -247,6 +247,6 @@ module_init(key_char_init);
 module_exit(key_char_exit);
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("liyunfeng");
+MODULE_AUTHOR("liyunfeng <1193230388@qq.com>");
 MODULE_DESCRIPTION("GPIO Key Character Device");
 MODULE_VERSION("0.1");
