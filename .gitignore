@@ -9,3 +9,5 @@ Module.symvers
 .module-common.o
 *.ko
 compile_commands.json
+trip_space_empty_line.sh
+demo_user/app
