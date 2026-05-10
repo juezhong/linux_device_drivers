@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: GPL-2.0-or-later
+// Copyright (C) 2026 liyunfeng
+
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>

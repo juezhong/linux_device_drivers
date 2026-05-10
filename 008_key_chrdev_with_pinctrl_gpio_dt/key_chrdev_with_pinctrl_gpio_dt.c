@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: GPL-2.0-or-later
+// Copyright (C) 2026 liyunfeng
+
 #include "linux/gpio/consumer.h"
 #include "linux/minmax.h"
 #include "linux/of.h"

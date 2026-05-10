@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: GPL-2.0-or-later
+// Copyright (C) 2026 liyunfeng
+
 #ifndef __COMMANDS_H__
 #define __COMMANDS_H__
 

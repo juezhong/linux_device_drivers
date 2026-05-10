@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: GPL-2.0-or-later
+// Copyright (C) 2026 liyunfeng
+
 #ifndef __OLED_FONT_H
 #define __OLED_FONT_H
 

@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: GPL-2.0-or-later
+// Copyright (C) 2026 liyunfeng
+
 #include "linux/ioport.h"
 #include "linux/platform_device.h"
 #include <linux/module.h>

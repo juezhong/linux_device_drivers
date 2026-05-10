@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: GPL-2.0-or-later
+// Copyright (C) 2026 liyunfeng
+
 #include "linux/interrupt.h"
 #include "linux/irqdomain.h"
 #include "linux/irqreturn.h"
